@@ -1,0 +1,20 @@
+{
+  "name": "genai_agenticai_website_cloner",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/rajnishsingh1997/Genai_agenticAI_website_cloner#readme",
+  "bugs": {
+    "url": "https://github.com/rajnishsingh1997/Genai_agenticAI_website_cloner/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajnishsingh1997/Genai_agenticAI_website_cloner.git"
+  },
+  "license": "ISC",
+  "author": "rajnish",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
