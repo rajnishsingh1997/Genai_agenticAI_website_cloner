@@ -1,9 +1,10 @@
 import express from "express";
 import isValidURL from "../utils/validateUrl.js";
+import axios from "axios";
 
 const analyzeUrl = express();
 
-analyzeUrl.post("/analyze", (req, res) => {
+analyzeUrl.post("/analyze", async (req, res) => {
   const { url } = req.body;
 
   if (!url) {
@@ -21,10 +22,12 @@ analyzeUrl.post("/analyze", (req, res) => {
       message: "Provided Url is not valid",
     });
   }
+  const response = await axios.get(url);
+
 
   res.status(200).json({
     success: true,
-    message: "working",
+    message: "message",
   });
 });
 
