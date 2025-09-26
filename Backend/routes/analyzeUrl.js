@@ -2,6 +2,7 @@ import express from "express";
 import isValidURL from "../utils/validateUrl.js";
 import axios from "axios";
 import * as cheerio from "cheerio";
+import mainProcessor from "../services/processWithLLM.js";
 
 const analyzeUrl = express();
 
@@ -25,9 +26,11 @@ analyzeUrl.post("/analyze", async (req, res) => {
 
   try {
     const response = await axios.get(url);
+    const resultFromLLM = await mainProcessor(response);
+    
     res.status(200).json({
       success: true,
-      message: response.data,
+      message: resultFromLLM,
     });
   } catch (error) {
     res.status(400).json({
